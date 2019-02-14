@@ -55,6 +55,7 @@ button.calc-input.operator {
   color: white;
   border: 1px solid white;
   box-sizing: border-box;
+  padding-bottom: 6px;
   
 }
 
