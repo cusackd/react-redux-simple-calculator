@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateCalculation, clearCalculation } from './actions';
+import CalcButton from './components/CalcButton';
 
 class CalculatorComponent extends Component {
 
@@ -16,6 +17,8 @@ class CalculatorComponent extends Component {
     this._forceScrollOnDisplay();
   }
 
+  // Replace the operator chars add a span for styling
+  // and replace division and multiplication symbols
   _replaceChars(value) {
     value = value.join("");
     value = value.replace(/\//g, '<span class="operatorStyle">÷</span>');
@@ -33,18 +36,6 @@ class CalculatorComponent extends Component {
     this.refs.resultDisplay.scrollLeft = 10000;
   }
 
-  _buttonAddValue(value, htmlCode, additionalClass) {
-    // Create the button for the operator and integers
-    // Reduce the amount of repition on the render function
-    return (
-      <button
-        className={`calc-input ${additionalClass}`} 
-        onClick={() => this.props.updateCalculation(value, this.props.calculation, this.props.result)}>
-        {htmlCode ? String.fromCharCode(htmlCode) : value}
-      </button>
-    );
-  }
-
   render() {
     return (
         <div className='calculator'>
@@ -55,27 +46,27 @@ class CalculatorComponent extends Component {
           
           <button className='clear' onClick={() => this.props.clearCalculation()}>Clear</button>
           <div className='calculator-inputs-row'>
-            {this._buttonAddValue(7)}          
-            {this._buttonAddValue(8)}
-            {this._buttonAddValue(9)}
-            {this._buttonAddValue('/', 47, 'operator')}
+            <CalcButton value={7} />
+            <CalcButton value={8} />
+            <CalcButton value={9} />
+            <CalcButton value="/" htmlCode="47" additionalClass="operator" />
           </div>
           
           <div className='calculator-inputs-row'>
-            {this._buttonAddValue(4)}          
-            {this._buttonAddValue(5)}
-            {this._buttonAddValue(6)}
-            {this._buttonAddValue('*', 215, 'operator')}
+            <CalcButton value={4} />
+            <CalcButton value={5} />
+            <CalcButton value={6} />
+            <CalcButton value='*' htmlCode="215" additionalClass="operator" />
           </div>
           <div className='calculator-inputs-row'>
-            {this._buttonAddValue(1)}          
-            {this._buttonAddValue(2)}
-            {this._buttonAddValue(3)}
-            {this._buttonAddValue('-', 8722, 'operator')}
+            <CalcButton value={1} />
+            <CalcButton value={2} />
+            <CalcButton value={3} />
+            <CalcButton value='-' htmlCode="8722" additionalClass="operator" />
           </div>
           <div className='calculator-inputs-row'>
-            {this._buttonAddValue(0, null, 'zero')}
-            {this._buttonAddValue('+', 43, 'operator')}
+            <CalcButton value={0} additionalClass="zero" />
+            <CalcButton value='+' htmlCode="43" additionalClass="operator" />
           </div>
         </div>
     );
