@@ -11,4 +11,4 @@ This project was created for an interview as a ReactJS developer, it shows the u
 
 
 ### Calculator Example
-![Image of React Redux Simple Calculator](https://i.imgur.com/iCp87eL.jpg)
+![Image of React Redux Simple Calculator](https://i.imgur.com/1LPCU6G.jpg)
