@@ -45,6 +45,7 @@ button.calc-input {
 button.calc-input.zero {
   width: 184px;
   text-align: left;
+  padding-left: 15px;
 }
 
 button.calc-input.numeric {
