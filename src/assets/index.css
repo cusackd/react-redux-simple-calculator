@@ -20,7 +20,8 @@ html * {
 }
 
 .operatorStyle {
-  font-weight: 200;
+  font-weight: 100;
+  font-family: 'open sans light',arial,sans-serif;;
 }
 
 button.clear {
@@ -66,6 +67,7 @@ button.calc-input.operator {
 .calculator-results div:first-child {
   color: #FFFFFF;
   font-size: 40px;
+  height: 55px;
 }
 
 .calculator-results div:last-child {

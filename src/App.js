@@ -49,7 +49,7 @@ class CalculatorComponent extends Component {
             <CalcButton value={7} />
             <CalcButton value={8} />
             <CalcButton value={9} />
-            <CalcButton value="/" htmlCode="47" additionalClass="operator" />
+            <CalcButton value="/" htmlCode="247" additionalClass="operator" />
           </div>
           
           <div className='calculator-inputs-row'>
