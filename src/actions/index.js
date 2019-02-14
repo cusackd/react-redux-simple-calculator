@@ -11,8 +11,8 @@ export const updateCalculation = (inputValue, currentState, currentResult) => {
   let calculationResult = calculation(updateCalculationArray, currentResult);
 
   return {
-  	type: UPDATE_CALCULATION_AND_RESULT,
-  	payload: {
+    type: UPDATE_CALCULATION_AND_RESULT,
+    payload: {
       calculation: updateCalculationArray, 
       result: calculationResult
     }
@@ -22,8 +22,8 @@ export const updateCalculation = (inputValue, currentState, currentResult) => {
 // TODO Make the calculation
 export const clearCalculation = () => {
   return {
-  	type: CLEAR_ALL,
-  	payload: {
+    type: CLEAR_ALL,
+    payload: {
       calculation: [], 
       result: 0
     }

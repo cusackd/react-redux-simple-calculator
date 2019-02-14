@@ -5,13 +5,13 @@ import { updateCalculation, clearCalculation } from './actions';
 class CalculatorComponent extends Component {
 
   componentDidMount() {
-  	// Force scroll on the display
+    // Force scroll on the display
     // I do this on mount in case reducer is already populated
-  	this._forceScrollOnDisplay();
+    this._forceScrollOnDisplay();
   }
   
   componentDidUpdate() {
-  	// Force scroll on the display
+    // Force scroll on the display
     // this function gets called on component update
     this._forceScrollOnDisplay();
   }
@@ -29,15 +29,15 @@ class CalculatorComponent extends Component {
     // Force scroll on div, put a value in here
     // instead of calculating the offset
     // This keeps the latest numbers in display
-		this.refs.calculationDisplay.scrollLeft = 10000;
-		this.refs.resultDisplay.scrollLeft = 10000;
+    this.refs.calculationDisplay.scrollLeft = 10000;
+    this.refs.resultDisplay.scrollLeft = 10000;
   }
 
   _buttonAddValue(value, htmlCode, additionalClass) {
     // Create the button for the operator and integers
     // Reduce the amount of repition on the render function
     return (
-    	<button
+      <button
         className={`calc-input ${additionalClass}`} 
         onClick={() => this.props.updateCalculation(value, this.props.calculation, this.props.result)}>
         {htmlCode ? String.fromCharCode(htmlCode) : value}
@@ -49,8 +49,7 @@ class CalculatorComponent extends Component {
     return (
         <div className='calculator'>
           <div className='calculator-results'>
-              <div ref='calculationDisplay' className='calculationDisplay' dangerouslySetInnerHTML={{ __html: this.props.calculation.length ? this._replaceChars(this.props.calculation) : 0 }} />
-              {/* {this.props.calculation.length ? this._replaceChars(this.props.calculation) : 0} */}
+            <div ref='calculationDisplay' className='calculationDisplay' dangerouslySetInnerHTML={{ __html: this.props.calculation.length ? this._replaceChars(this.props.calculation) : 0 }} />
             <div ref='resultDisplay' className='resultDisplay'>{this.props.result}</div>
           </div>
           
@@ -84,12 +83,12 @@ class CalculatorComponent extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-	updateCalculation: (inputValue, currentState, currentResult) => dispatch(updateCalculation(inputValue, currentState, currentResult)),
-	clearCalculation: () => dispatch(clearCalculation())
+  updateCalculation: (inputValue, currentState, currentResult) => dispatch(updateCalculation(inputValue, currentState, currentResult)),
+  clearCalculation: () => dispatch(clearCalculation())
 });
 
 const mapStateToProps = (state) => ({
-	calculation: state.calculation,
+  calculation: state.calculation,
   result: state.result
 });
 
