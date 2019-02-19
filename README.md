@@ -12,3 +12,16 @@ This project was created for an interview as a ReactJS developer, it shows the u
 
 ### Calculator Example
 ![Image of React Redux Simple Calculator](https://i.imgur.com/1LPCU6G.jpg)
+
+
+### Todo
+- [ ] Write Tests
+- [ ] Create Docker Container
+- [ ] Refactor calculation utility
+- [ ] Add decimal
+- [ ] Add backspace on calculation
+- [ ] Add percentage
+- [ ] Add square root
+- [ ] Display history
+- [ ] Add css preprocessor
+- [ ] Create NPM package for calculation so it can be used outside of redux app
